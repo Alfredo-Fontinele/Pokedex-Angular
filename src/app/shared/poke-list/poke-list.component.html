@@ -1,27 +1,22 @@
 <section class="section__pokemons">
-  <a router-link="" class="pokemon">
+  <a
+    *ngFor="let pokemon of pokemons.results"
+    [routerLink]="['details', pokemon.info.id]"
+    class="pokemon"
+  >
     <section class="pokemon__status">
-      <h2>Bulbassauro</h2>
+      <h2>{{ pokemon.name }}</h2>
       <ul>
-        <li>Grass</li>
-        <li>Poison</li>
+        <li *ngFor="let value of pokemon.info.types">
+          {{ value.type.name }}
+        </li>
       </ul>
     </section>
     <section class="pokemon__image">
-      <img src="../../../assets/pokemons/bulbassauro.svg" alt="pokemon" />
-    </section>
-  </a>
-
-  <a router-link="" class="pokemon">
-    <section class="pokemon__status">
-      <h2>Bulbassauro</h2>
-      <ul>
-        <li>Grass</li>
-        <li>Poison</li>
-      </ul>
-    </section>
-    <section class="pokemon__image">
-      <img src="../../../assets/pokemons/bulbassauro.svg" alt="pokemon" />
+      <img
+        [src]="pokemon.info.sprites.other.dream_world.front_default"
+        [alt]="pokemon.name"
+      />
     </section>
   </a>
 </section>

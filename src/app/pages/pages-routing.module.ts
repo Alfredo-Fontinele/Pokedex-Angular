@@ -1,9 +1,9 @@
-import { RouterModule, Routes } from '@angular/router';
-import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router'
+import { NgModule } from '@angular/core'
 
 // Components
-import { HomeComponent } from './home/home.component';
-import { DetailsComponent } from './details/details.component';
+import { HomeComponent } from './home/home.component'
+import { DetailsComponent } from './details/details.component'
 
 const routes: Routes = [
   {
@@ -11,10 +11,10 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DetailsComponent,
   },
-];
+]
 
 @NgModule({
   declarations: [],

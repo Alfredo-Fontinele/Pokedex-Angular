@@ -5,24 +5,30 @@ $paddingTen: rem-calc(10);
 :host {
   .section__pokemons {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: rem-calc(20);
   }
 
   .pokemon {
     position: relative;
     display: flex;
-    width: 49%;
-    background-color: var(--white);
+    justify-content: space-between;
+    background-color: #ccc;
     border-radius: $paddingTen;
-    padding: rem-calc(30);
+    padding: rem-calc(40);
+    width: rem-calc(220);
+    text-decoration: none;
 
     &__status {
       display: flex;
       flex-direction: column;
       gap: $paddingTen;
+      max-width: rem-calc(100);
 
       h2 {
         font-size: rem-calc(20);
+        text-transform: capitalize;
         font-style: italic;
         font-weight: 700;
       }
@@ -30,15 +36,16 @@ $paddingTen: rem-calc(10);
       ul {
         display: flex;
         flex-direction: column;
-        gap: rem-calc(5);
+        gap: rem-calc(10);
 
         li {
           background-color: var(--gray-1);
           font-size: $paddingTen;
+          text-transform: capitalize;
           display: flex;
           justify-content: center;
           align-items: center;
-          width: rem-calc(60);
+          padding: rem-calc(5);
           border-radius: rem-calc(50);
         }
       }
@@ -49,8 +56,8 @@ $paddingTen: rem-calc(10);
       justify-content: center;
       align-items: center;
       position: absolute;
-      right: rem-calc(10);
-      top: rem-calc(12);
+      right: rem-calc(20);
+      top: rem-calc(25);
       width: rem-calc(110);
       height: rem-calc(90);
       background-image: url("../../../assets/icons/card-bolinhas.svg");
