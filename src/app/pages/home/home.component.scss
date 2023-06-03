@@ -1,0 +1,9 @@
+@import "../../../config/rem-calc.scss";
+
+:host {
+  main {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(30);
+  }
+}

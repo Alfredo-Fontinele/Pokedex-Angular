@@ -1,0 +1,4 @@
+@function rem-calc($size) {
+  $valueConvertedToRem: calc($size / 16);
+  @return #{$valueConvertedToRem}rem;
+}

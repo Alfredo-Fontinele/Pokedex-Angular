@@ -1,0 +1,64 @@
+@import "../../../config/rem-calc.scss";
+
+$paddingTen: rem-calc(10);
+
+:host {
+  .section__pokemons {
+    display: flex;
+    gap: rem-calc(20);
+  }
+
+  .pokemon {
+    position: relative;
+    display: flex;
+    width: 49%;
+    background-color: var(--white);
+    border-radius: $paddingTen;
+    padding: rem-calc(30);
+
+    &__status {
+      display: flex;
+      flex-direction: column;
+      gap: $paddingTen;
+
+      h2 {
+        font-size: rem-calc(20);
+        font-style: italic;
+        font-weight: 700;
+      }
+
+      ul {
+        display: flex;
+        flex-direction: column;
+        gap: rem-calc(5);
+
+        li {
+          background-color: var(--gray-1);
+          font-size: $paddingTen;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: rem-calc(60);
+          border-radius: rem-calc(50);
+        }
+      }
+    }
+
+    &__image {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      right: rem-calc(10);
+      top: rem-calc(12);
+      width: rem-calc(110);
+      height: rem-calc(90);
+      background-image: url("../../../assets/icons/card-bolinhas.svg");
+      background-repeat: no-repeat;
+
+      img {
+        width: rem-calc(80);
+      }
+    }
+  }
+}
