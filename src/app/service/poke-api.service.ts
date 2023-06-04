@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core'
 import { tap } from 'rxjs/operators'
 import { Observable } from 'rxjs'
 
-interface ResultPokemonProps {
+export interface ResultPokemonProps {
   name: string
   url: string
   info: any
@@ -14,6 +14,10 @@ export interface PokemonProps {
   next: string | null
   previous: string | null
   results: ResultPokemonProps[]
+}
+
+interface PokemonAbilitiesProps {
+  abilities: []
 }
 
 @Injectable({
@@ -36,5 +40,9 @@ export class PokeApiService {
           )
         )
       )
+  }
+
+  findOne(url: string): Observable<PokemonAbilitiesProps> {
+    return this.http.get<PokemonAbilitiesProps>(url)
   }
 }
