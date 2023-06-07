@@ -1,4 +1,8 @@
-import { PokeApiService, PokemonProps } from 'src/app/service/poke-api.service'
+import {
+  PokeApiService,
+  PokemonProps,
+  ResultPokemonProps,
+} from 'src/app/service/poke-api.service'
 import { Component } from '@angular/core'
 
 @Component({
@@ -7,7 +11,8 @@ import { Component } from '@angular/core'
   styleUrls: ['./poke-list.component.scss'],
 })
 export class PokeListComponent {
-  pokemons: PokemonProps = {
+  private listFilteredPokemons: ResultPokemonProps[] = []
+  public pokemons: PokemonProps = {
     count: 0,
     next: null,
     previous: null,
@@ -19,6 +24,20 @@ export class PokeListComponent {
   }
 
   findAll() {
-    this.pokeApiService.findAll().subscribe((res) => (this.pokemons = res))
+    this.pokeApiService.findAll().subscribe({
+      next: (res) => {
+        this.listFilteredPokemons = res.results
+        this.pokemons.results = this.listFilteredPokemons
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info('complete'),
+    })
+  }
+
+  searchPokemon(value: string) {
+    const filter = this.listFilteredPokemons.filter((res) => {
+      return !res.name.indexOf(value.toLowerCase())
+    })
+    this.pokemons.results = filter
   }
 }

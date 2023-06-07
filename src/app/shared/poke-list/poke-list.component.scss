@@ -3,6 +3,13 @@
 $paddingTen: rem-calc(10);
 
 :host {
+  .container__poke-list {
+    display: flex;
+    flex-direction: column;
+    gap: rem-calc(30);
+    padding: rem-calc(30) rem-calc(10);
+  }
+
   .section__pokemons {
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +25,7 @@ $paddingTen: rem-calc(10);
     border-radius: $paddingTen;
     padding: rem-calc(40);
     width: rem-calc(220);
+    color: #1c1b1b;
     text-decoration: none;
 
     &__status {

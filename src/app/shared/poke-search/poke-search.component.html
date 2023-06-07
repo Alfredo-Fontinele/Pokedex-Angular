@@ -1,4 +1,9 @@
 <form>
-  <input type="text" placeholder="Buscar pokemon..." />
+  <input
+    type="text"
+    #input
+    (keyup)="search(input.value)"
+    placeholder="Buscar pokemon..."
+  />
   <img src="../../../assets/icons/lupa.svg" alt="lupa" />
 </form>

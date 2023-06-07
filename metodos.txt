@@ -1,0 +1,16 @@
+// Objetos
+
+- Observable => É um Objeto que recebe notificações de mudança em outro objeto.
+  Utilizado para lidar com eventos assíncronos
+
+// Métodos
+
+- pipe() => Método que permite "encadear operadores de transformação no fluxo de dados" do Observable()
+- subscribe() => Método utilizado para receber notificações dos valores emitidos pelo Observable(). (Semelhante ao fetch, pois pode receber dentro de um objeto os métodos then(), catch() e finally(), mas chamados respectivamente por next, error e complete)
+
+// Operadores
+
+- tap() => Operador usado para "side effects (efeitos colaterais) sem modificar o fluxo de dados" do Observable()
+- forkJoin() => Operador usado para combinar Observables e aguardar que todos eles concluam antes
+  de emitir um valor final.
+  Ele é útil quando você precisa realizar várias chamadas assíncronas. (Semelhante ao Promise.all())
